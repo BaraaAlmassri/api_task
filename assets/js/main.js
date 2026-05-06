@@ -19,3 +19,41 @@ menuBtn.addEventListener("click", () => {
 });
 
 //-------------------------------------------------------------------------------------------
+const getCategories = async () => {
+  try {
+    const response = await axios.get(
+      "https://dummyjson.com/products/category-list",
+    );
+    return response.data;
+  } catch (error) {
+    alert("error in getting categories");
+  }
+};
+
+const displayCategories = async () => {
+  const data = await getCategories();
+  console.log(data);
+
+  try {
+    const result = data
+      .map(
+        (category) =>
+          `
+          <a
+                    href="./details-category.html?category=${category}"
+                    class="text-gray-600 hover:text-orange-500 text-sm transition"
+                    >${category}</a
+                  >
+        `,
+      )
+      .join("");
+
+    document.querySelector(".Categories-big").innerHTML = result;
+    document.querySelector(".Categories-small").innerHTML = result;
+  } catch (error) {
+    alert("error with displaying categories");
+  }
+};
+
+getCategories();
+displayCategories();

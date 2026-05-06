@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Category Products</title>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/category-details.css" />
+  </head>
+  <body>
+    <header class="absolute w-full p-6 z-10">
+      <div class="max-w-[1400px] mx-auto flex justify-between text-black">
+        <a href="./index.html"><strong>MOON</strong> SHOP</a>
+
+        <div class="relative hidden md:flex gap-6 items-center">
+          <a
+            href="./index.html"
+            class="text-black uppercase hover:text-orange-400 transition duration-200"
+            >Home</a
+          >
+
+          <div class="relative group">
+            <button
+              class="flex items-center gap-1 text-black uppercase hover:text-orange-400 transition duration-200 focus:outline-none"
+            >
+              Categories
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            <div
+              class="absolute left-1/2 -translate-x-1/2 top-full w-[600px] pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+            >
+              <div
+                class="bg-white rounded-xl shadow-2xl p-6 border border-gray-100"
+              >
+                <div
+                  class="flex justify-between items-center mb-4 pb-2 border-b"
+                >
+                  <span
+                    class="text-gray-900 font-bold uppercase text-sm tracking-wider"
+                    >All Categories</span
+                  >
+                </div>
+
+                <div
+                  class="grid grid-cols-3 gap-x-8 gap-y-3 Categories-big"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <a
+            href="#"
+            class="text-black uppercase hover:text-orange-400 transition duration-200"
+            >About Us</a
+          >
+
+          <a
+            href="#"
+            class="text-black uppercase hover:text-orange-400 transition duration-200"
+            >Contact</a
+          >
+
+          <div class="search-btn flex justify-center items-center">
+            <ion-icon
+              name="search-outline"
+              class="text-xl cursor-pointer hover:text-orange-400 transition duration-200"
+            ></ion-icon>
+          </div>
+
+          <div class="search-box hidden absolute top-10 right-0">
+            <div
+              class="input-box p-3 bg-black/30 rounded-full opacity-0 translate-y-10 transition duration-200"
+            >
+              <input
+                type="text"
+                placeholder="Search......"
+                class="focus:outline-none text-black"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-btn md:hidden">
+          <span class="menu-btn-top"></span>
+          <span class="menu-btn-middle"></span>
+          <span class="menu-btn-bottom"></span>
+        </div>
+      </div>
+
+      <div class="md:hidden">
+        <div
+          class="mobile-menu hidden absolute left-6 right-6 flex flex-col items-center gap-6 mt-10 p-6 font-bold bg-white/30 backdrop-blur rounded-lg"
+        >
+          <a
+            href="./index.html"
+            class="text-white uppercase hover:text-orange-400 transition duration-200"
+            >Home</a
+          >
+
+          <div class="relative group">
+            <button
+              class="flex items-center gap-1 text-white uppercase hover:text-orange-400 transition duration-200 focus:outline-none"
+            >
+              Categories
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            <div
+              class="absolute left-1/2 -translate-x-1/2 top-full w-[600px] pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+            >
+              <div
+                class="bg-white rounded-xl shadow-2xl p-6 border border-gray-100"
+              >
+                <div
+                  class="flex justify-between items-center mb-4 pb-2 border-b"
+                >
+                  <span
+                    class="text-gray-900 font-bold uppercase text-sm tracking-wider"
+                    >All Categories</span
+                  >
+                </div>
+
+                <div
+                  class="grid grid-cols-3 gap-x-8 gap-y-3 Categories-small"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <a
+            href="#"
+            class="text-white uppercase hover:text-orange-400 transition duration-200"
+            >About Us</a
+          >
+
+          <a
+            href="#"
+            class="text-white uppercase hover:text-orange-400 transition duration-200"
+            >Contact</a
+          >
+          <div class="p-3 w-full bg-white rounded-full">
+            <input
+              type="text"
+              placeholder="Search......"
+              class="focus:outline-none text-black"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="py-12 bg-white border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4">
+        <h1
+          class="text-4xl font-bold tracking-tight text-gray-900 category-name mt-5"
+        ></h1>
+      </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 products-cards"
+      ></div>
+    </main>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/details-category.js"></script>
+  </body>
+</html>
