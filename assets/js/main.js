@@ -105,7 +105,7 @@ const displayProducts = async () => {
               ${product.title}
             </h3>
             <p class="mt-4 text-2xl font-bold text-gray-900">$${product.price}</p>
-            <a href="/product-details.html?productId=${product.id}" class="mt-4 block text-center text-sm font-semibold text-indigo-600 hover:text-indigo-500 hover:underline transition-all">
+            <a href="./product-details.html?productId=${product.id}" class="mt-4 block text-center text-sm font-semibold text-indigo-600 hover:text-indigo-500 hover:underline transition-all">
             View Product Details
         </a>
             <button
