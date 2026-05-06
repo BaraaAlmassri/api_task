@@ -1,0 +1,43 @@
+*{
+    font-family: 'Opn sans' , sans-serif;
+}
+
+
+.menu-btn {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.menu-btn-top,
+.menu-btn-middle,
+.menu-btn-bottom{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    transform: rotate(0);
+    transition: all 0.3s ease;
+}
+
+.menu-btn-middle{
+    transform:translateY(7px) ;
+}
+.menu-btn-bottom{
+    transform:translateY(14px) ;
+}
+
+.menu-btn.open .menu-btn-top{
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+.menu-btn.open .menu-btn-middle{
+    display: none;
+}
+
+.menu-btn.open .menu-btn-bottom{
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
