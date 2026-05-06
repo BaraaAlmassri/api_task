@@ -227,6 +227,50 @@
           </div>
         </div>
       </section>
+
+      <section class="max-w-7xl mx-auto px-4 py-12">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-2 gap-4"
+        >
+          <div class="our-products">
+            <h2 class="text-4xl font-bold tracking-tight text-gray-900 mb-2">
+              Our Products
+            </h2>
+          </div>
+
+          <div class="sort-options">
+            <label
+              for="sort"
+              class="block text-2sm font-bold tracking-tight text-gray-900"
+              >Sort by:
+            </label>
+            <select
+              id="sort"
+              name="sort"
+              class="sort-products block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-300 focus:outline-none focus:ring-indigo-300 sm:text-sm border"
+            >
+              <option value="title-asc">Title: A-Z</option>
+              <option value="title-desc">Title: Z-A</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <hr class="border-gray-200" />
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-4 mt-3 products-10"
+        ></div>
+
+        <div class="flex items-center justify-center py-10">
+          <nav aria-label="Page navigation">
+            <ul
+              class="pagination-container inline-flex items-stretch -space-x-px"
+            ></ul>
+          </nav>
+        </div>
+      </section>
     </main>
 
     <script
