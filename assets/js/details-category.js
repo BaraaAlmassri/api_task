@@ -1,93 +1,84 @@
-const searchbox=document.querySelector(".search-box");
-const searchbtn=document.querySelector(".search-btn");
-const searchinput=document.querySelector(".input-box");
+const searchbox = document.querySelector(".search-box");
+const searchbtn = document.querySelector(".search-btn");
+const searchinput = document.querySelector(".input-box");
 
 const menuBtn = document.querySelector(".menu-btn");
 const mobilemenu = document.querySelector(".mobile-menu");
 
-
-
-
-
-searchbtn.addEventListener('click' , ()=>{
-    searchbox.classList.toggle('hidden');
-    setTimeout(()=>{
-        searchinput.classList.toggle('opacity-0');
-        searchinput.classList.toggle('translate-y-10');
-    })
+searchbtn.addEventListener("click", () => {
+  searchbox.classList.toggle("hidden");
+  setTimeout(() => {
+    searchinput.classList.toggle("opacity-0");
+    searchinput.classList.toggle("translate-y-10");
+  });
 });
 
-
-menuBtn.addEventListener('click' , ()=>{
-
-    menuBtn.classList.toggle('open');
-    mobilemenu.classList.toggle('hidden');
-
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("open");
+  mobilemenu.classList.toggle("hidden");
 });
-
 
 const params = new URLSearchParams(location.search);
 
-const categoryName= params.get("category");
+const categoryName = params.get("category");
 
 document.querySelector(".category-name").textContent = categoryName;
 
-const getProduct= async ()=>{
-    const response = await axios.get(`https://dummyjson.com/products/category/${categoryName}`);
+const getProduct = async () => {
+  const response = await axios.get(
+    `https://dummyjson.com/products/category/${categoryName}`,
+  );
 
-   return response.data;
-}
+  return response.data;
+};
 
+const getCategories = async () => {
+  try {
+    const response = await axios.get(
+      "https://dummyjson.com/products/category-list",
+    );
+    return response.data;
+  } catch (error) {
+    alert("error in getting categories");
+  }
+};
 
-const getCategories = async ()=>{
-   
-       try {
-         const response = await axios.get('https://dummyjson.com/products/category-list');
-         return response.data;
-       }catch(error){
-          alert("error in getting categories");
-       }
-        
+const displayCategories = async () => {
+  const data = await getCategories();
+  console.log(data);
 
-   
-}
-
-const displayCategories = async ()=>{
-    const data = await getCategories();
-    console.log(data);
-
-    try{
-        const result = data.map((category)=>
-        `
+  try {
+    const result = data
+      .map(
+        (category) =>
+          `
           <a
                     href="./details-category.html?category=${category}"
                     class="text-gray-600 hover:text-orange-500 text-sm transition"
                     >${category}</a
                   >
-        `
-        ).join('');
+        `,
+      )
+      .join("");
 
-        document.querySelector(".Categories-big").innerHTML=result;
-        document.querySelector(".Categories-small").innerHTML=result;
-    }catch(error){
-           alert("error with displaying categories");
-    }
-}
-
-
-
-
-
+    document.querySelector(".Categories-big").innerHTML = result;
+    document.querySelector(".Categories-small").innerHTML = result;
+  } catch (error) {
+    alert("error with displaying categories");
+  }
+};
 
 getCategories();
 displayCategories();
 
-const displayProducts = async ()=>{
-    const data = await getProduct();
-    console.log(data.products);
+const displayProducts = async () => {
+  const data = await getProduct();
+  console.log(data.products);
 
-    const result = data.products.map((product)=>
-    `
+  const result = data.products
+    .map(
+      (product) =>
+        `
       <div
           class="group bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
         >
@@ -118,7 +109,7 @@ const displayProducts = async ()=>{
             </h3>
             <p class="mt-4 text-2xl font-bold text-gray-900">$${product.price}</p>
 
-             <a href="/product-details.html?productId=${product.id}" class="mt-4 block text-center text-sm font-semibold text-indigo-600 hover:text-indigo-500 hover:underline transition-all">
+             <a href="./product-details.html?productId=${product.id}" class="mt-4 block text-center text-sm font-semibold text-indigo-600 hover:text-indigo-500 hover:underline transition-all">
             View Product Details
         </a>
             <button
@@ -129,15 +120,12 @@ const displayProducts = async ()=>{
           </div>
         </div>
     
-    `
-    
-    ).join('');
+    `,
+    )
+    .join("");
 
-    document.querySelector(".products-cards").innerHTML=result;
-
-    
-}
-
+  document.querySelector(".products-cards").innerHTML = result;
+};
 
 getProduct();
 displayProducts();
