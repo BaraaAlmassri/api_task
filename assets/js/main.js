@@ -175,7 +175,7 @@ const updateProducts = async (page = 1) => {
                     </div>
                     <h3 class="text-xl font-semibold text-gray-800">${product.title}</h3>
                     <p class="mt-4 text-2xl font-bold text-gray-900">$${product.price}</p>
-                    <a href="/product-details.html?productId=${product.id}" class="mt-4 block text-center text-sm font-semibold text-indigo-600 hover:text-indigo-500 hover:underline">
+                    <a href="./product-details.html?productId=${product.id}" class="mt-4 block text-center text-sm font-semibold text-indigo-600 hover:text-indigo-500 hover:underline">
                         View Product Details
                     </a>
                     <button class="mt-6 w-full bg-gray-900 text-white py-3 rounded-xl font-medium hover:bg-gray-800">
